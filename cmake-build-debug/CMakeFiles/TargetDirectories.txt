@@ -1,0 +1,3 @@
+/home/alunos/Downloads/ProjetoCG/cmake-build-debug/CMakeFiles/ProjetoCG.dir
+/home/alunos/Downloads/ProjetoCG/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alunos/Downloads/ProjetoCG/cmake-build-debug/CMakeFiles/rebuild_cache.dir

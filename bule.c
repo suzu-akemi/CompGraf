@@ -15,17 +15,9 @@ GLfloat AnguloDeVisao;
 GLfloat Obs[3];
 GLfloat Alvo[3];
 
-float esfera_rotacao_X=0;
-float esfera_rotacao_Y=0;
-float esfera_rotacao_Z=0;
-
-float cone_rotacao_X=0;
-float cone_rotacao_Y=0;
-float cone_rotacao_Z=0;
-
-float cubo_rotacao_X=0;
-float cubo_rotacao_Y=0;
-float cubo_rotacao_Z=0;
+float rotacao_X=0;
+float rotacao_Y=0;
+float rotacao_Z=0;;
 
 void init(void) {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Fundo preto
@@ -66,15 +58,19 @@ void reshape(int w, int h) {
 }
 
 void DesenhaCenario() {
-	glPopMatrix();
-	glColor3f(1.0,0.0,1.0);
-	glutSolidTeapot(1.0);
-	glColor3f(0.0,0.0,1.0);
-	glutWireTeapot(1.0);
-
-
 	glPushMatrix();
 
+	glTranslatef(-0.1,0.8,-0.2);
+	glRotatef(rotacao_X, 1.0f, 0.0f, 0.0f);
+	glRotatef(rotacao_Y, 0.0f, 1.0f, 0.0f);
+	glRotatef(rotacao_Z, 0.0f, 0.0f, 1.0f);
+	glColor3f(1.0,0.0,1.0);
+	glutSolidTeapot(1.5);
+	glColor3f(0.0,0.0,1.0);
+	glutWireTeapot(1.5);
+
+
+	glPopMatrix();
 }
 
 
@@ -86,17 +82,9 @@ void display(void) {
 
 	PosicUser();
 	DesenhaCenario(1);
-	esfera_rotacao_X+=8;
-	esfera_rotacao_Y+=8;
-	esfera_rotacao_Z+=8;
-
-	cone_rotacao_X+=8;
-	cone_rotacao_Y+=8;
-	cone_rotacao_Z+=8;
-
-	cubo_rotacao_X+=8;
-	cubo_rotacao_Y+=8;
-	cubo_rotacao_Z+=8;
+	rotacao_X += 0;
+	rotacao_Y += 0.5;
+	rotacao_Z += 0;
 
 	glutSwapBuffers();
 }
